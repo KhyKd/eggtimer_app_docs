@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "app.eggtimer/eggtimer",
+  "description": "Shareable timer links for countdowns, clock times, Pomodoro, Tabata and step recipes. No account.",
+  "title": "Eggtimer.app",
+  "version": "1.0.0",
+  "websiteUrl": "https://eggtimer.app",
+  "icons": [
+    {
+      "src": "https://eggtimer.app/icons/timer-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://eggtimer.app/icons/timer.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://eggtimer.app/api/mcp"
+    }
+  ]
+}

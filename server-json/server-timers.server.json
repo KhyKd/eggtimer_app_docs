@@ -1,0 +1,47 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "app.eggtimer/server-timers",
+  "description": "Schedule, check and cancel server-side countdowns and step routines, with optional Zapier hooks.",
+  "title": "Eggtimer.app Server Timers",
+  "version": "1.0.0",
+  "websiteUrl": "https://eggtimer.app/server-timers.md",
+  "icons": [
+    {
+      "src": "https://eggtimer.app/icons/timer-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://eggtimer.app/icons/timer.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://eggtimer.app/api/mcp/server",
+      "headers": [
+        {
+          "description": "Bearer followed by your Eggtimer.app workspace API key (ew_...). Create a free workspace at https://eggtimer.app/automate.html",
+          "isRequired": true,
+          "format": "string",
+          "value": "Bearer {api_key}",
+          "isSecret": true,
+          "variables": {
+            "api_key": {
+              "description": "Eggtimer.app workspace API key (starts with ew_). Never the er_ recovery key.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          },
+          "name": "Authorization"
+        }
+      ]
+    }
+  ]
+}
