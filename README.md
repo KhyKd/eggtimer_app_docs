@@ -47,17 +47,17 @@ This repository is **documentation only** for the two hosted [Model Context Prot
 | Registry name | [`app.eggtimer/eggtimer`](server-json/eggtimer.server.json) | [`app.eggtimer/server-timers`](server-json/server-timers.server.json) |
 | Docs | [ai.html#mcp](https://eggtimer.app/ai.html#mcp) | [server-timers.md](https://eggtimer.app/server-timers.md), [server-routines.md](https://eggtimer.app/server-routines.md) |
 
-**Public link server.** No account, no key. The tools validate input and return eggtimer.app URLs, so an assistant never has to guess a link format. Creating a link starts nothing; the countdown starts when someone opens it.
+**Public link server.** No account, no key. The tools validate input and return eggtimer.app URLs. Creating a link does not start anything; the countdown starts when it is opened.
 
-**Server Timers.** For countdowns that must keep running after every browser tab closes. Schedules countdowns (1 second to 30 days) and finite multi-step routines, with status, listing, cancellation and optional delivery to a private Zapier Catch Hook. Create a free workspace and its API key at [eggtimer.app/automate.html](https://eggtimer.app/automate.html) (no email or payment details). Free plan with usage limits; see [Limits](#limits).
+**Server Timers.** For countdowns that need to keep running after browser tabs are closed. Schedules countdowns (1 second to 30 days) and finite multi-step routines, with status, listing, cancellation and optional delivery to a private Zapier Catch Hook. Create a free workspace and API key at [eggtimer.app/automate.html](https://eggtimer.app/automate.html) (no email or payments required). Free plan with usage limits; see [Limits](#limits).
 
 Protocol versions supported: `2025-11-25`, `2025-06-18`, `2025-03-26`. No sessions, SSE listener or server notifications; `GET` returns 405.
 
 ## Quick connect
 
-The public server needs only its URL. For Server Timers, keep your workspace key in an environment variable or a client secret prompt, never in a file you commit or share. The examples use `EGGTIMER_API_KEY`.
+The public server needs only the URL. For Server Timers, keep the workspace key in an environment variable or a client secret prompt only, never commit. The examples use `EGGTIMER_API_KEY`.
 
-> Use only the workspace **API key** (starts with `ew_`) in AI clients. Never paste the **recovery key** (starts with `er_`) into a client.
+> Use the workspace **API key** (starts with `ew_`) with AI clients. Never paste the **recovery key** (starts with `er_`) into a client.
 
 ### Claude
 
@@ -193,7 +193,7 @@ Replace `YOUR_WORKSPACE_API_KEY` locally. (No space after `Authorization:` avoid
 
 ### Focused tool sets
 
-Server Timers accepts a `profile` query parameter to cut tool-definition overhead. A profile filters discovery and calls; it does not narrow the key's permissions.
+Server Timers accepts a `profile` query parameter to reduce tool-definition overhead. A profile filters discovery and calls; it does not narrow the key's permissions.
 
 | URL | Tools |
 |---|---|
@@ -272,13 +272,13 @@ Server Timers:
 - Timer records expire 7 days after they end; idle workspaces expire after 90 days.
 - No uptime or delivery-latency SLO.
 
-Current figures always live at [eggtimer.app/server-timers.md](https://eggtimer.app/server-timers.md).
+Current figures are live at [eggtimer.app/server-timers.md](https://eggtimer.app/server-timers.md).
 
 ## Privacy and security
 
 - **Public server:** no account, no key, no access to any account. Links are constructed from your input and not stored. Hosting providers process ordinary request data. Don't put sensitive information in labels; links can be shared and copied.
 - **Server Timers:** each workspace key reaches only its own workspace. The service stores credential hashes, not key copies. Timer status never returns hook URLs or keys. Avoid sensitive titles.
-- **Keys:** keep your `ew_` API key in a secret store or environment variable. Never commit it, put it in a timer URL or recipe, or paste the `er_` recovery key into an AI client. Lost API key: rotate it with the recovery key at [automate.html](https://eggtimer.app/automate.html).
+- **Keys:** keep your `ew_` API key in a secret store or environment variable. Do not commit it, put it in a timer URL or recipe, or paste the `er_` recovery key into an AI client. Lost API key: rotate with the recovery key at [automate.html](https://eggtimer.app/automate.html).
 - **Approvals:** the public tools are read-only and safe to auto-approve. Ask your client to confirm before Server Timers write or cancel calls, and before enabling a webhook.
 - Network endpoints: `https://eggtimer.app/api/mcp`, `https://eggtimer.app/api/mcp/server`. Nothing runs locally.
 
@@ -298,8 +298,8 @@ Machine-readable discovery on the site: [llms.txt](https://eggtimer.app/llms.txt
 - Support page: [eggtimer.app/support](https://eggtimer.app/support)
 - Issues with these docs: open an issue in this repository.
 
-Eggtimer.app is operated by Gotoh Industries LLC.
+Eggtimer.app is owned and operated by Gotoh Industries LLC.
 
 ## License
 
-The documentation, snippets and manifests in this repository are released under the [MIT License](LICENSE). That license covers this repository's contents only. It does not grant rights to the Eggtimer.app service, its source code, name or logo; use of the service is governed by the [Terms of Service](https://eggtimer.app/terms).
+The documentation, snippets and manifests in this repository are released under the [MIT License](LICENSE). That license covers this repository's contents only. It does not grant rights to the Eggtimer.app service, source code, name or logo; use of the service is governed by the [Terms of Service](https://eggtimer.app/terms).
