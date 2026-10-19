@@ -19,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Scope: this license covers only the documentation, configuration snippets and
-manifest files in this repository. It does not cover the hosted Eggtimer.app
-service, its source code, or the Eggtimer.app name and logo. Use of the service
-is governed by the Terms of Service at https://eggtimer.app/terms.
